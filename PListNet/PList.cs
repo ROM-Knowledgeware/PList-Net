@@ -50,7 +50,9 @@ namespace PListNet
 			// set resolver to null in order to avoid calls to apple.com to resolve DTD
 			var settings = new XmlReaderSettings
 				{
-					DtdProcessing = DtdProcessing.Ignore,
+					//DtdProcessing = DtdProcessing.Ignore,
+					ProhibitDtd = false,
+					XmlResolver = null,
 				};
 
 			using (var reader = XmlReader.Create(stream, settings))
